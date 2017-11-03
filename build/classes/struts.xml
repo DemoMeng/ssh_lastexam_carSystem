@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.objectFactory" value="spring"></constant>
+	
+	
+
+	<package name="myP" extends="struts-default">
+			<action name="*" class="myAction" method="{1}">
+				<result name="queryOk">/WEB-INF/jsp/index.jsp</result>
+				<result name="addFailed">/WEB-INF/jsp/addFailed.jsp</result>
+				<result name="addSuccess" type="redirectAction">queryAllCar</result>
+				<result name="go_addProduct_jsp">/WEB-INF/jsp/add.jsp</result>
+				<result name="deleteFailed">/WEB-INF/jsp/deleteFailed.jsp</result>
+				<result name="deleteSuccess" type="redirectAction">queryAllCar</result>
+			</action>
+	</package>
+</struts>
